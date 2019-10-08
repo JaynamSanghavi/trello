@@ -18,7 +18,7 @@
         }
 
         public function readListItem($list_id){
-            $result_set = $this->connection->query("SELECT * FROM list WHERE is_deleted = 0 and list_id = $list_id");
+            $result_set = $this->connection->query("SELECT * FROM `list_item` INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id");
             return $result_set;
         }
     }
