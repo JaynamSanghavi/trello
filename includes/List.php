@@ -1,11 +1,15 @@
 <?php
-    include_once("classes/List.class.php");
+    include_once("../classes/List.class.php");
+    include_once("../classes/Functions.class.php");
     if(isset($_POST['submit'])){
         extract($_POST);
-        echo $list_title;
+        $list = new cardList();
+        $list->insertList($list_title);
+        Functions::redirect("../index.php");
     }
     $list = new cardList();
     $result_set = $list->readList();
+    $var ="";
     while($row = mysqli_fetch_assoc($result_set)){
 ?>
 <div class="list" >
@@ -13,7 +17,7 @@
                 <ul class="list-items" id="list<?php echo $row['list_id'];?>">
                     <?php
                         $var = $var .'#list' . $row['list_id'] . ',';
-                        include_once("classes/ListItem.class.php");
+                        include_once("../classes/ListItem.class.php");
                         $listitem = new ListItem();
                         $listitem_resultset = $listitem->readListItem((int)$row['list_id']);
                         while($row_item = mysqli_fetch_assoc($listitem_resultset)){
@@ -22,9 +26,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?></h6>
-                                <div class="item-avatar float-left m-2">
+                                <!-- <div class="item-avatar float-left m-2">
                                     <img src="data:image/jpeg;base64,<?php echo base64_encode($row_item['author_picture'])?>" alt="" class="rounded-circle">
-                                </div>
+                                </div> -->
                                 <div class="item-content">
                                     <p class="item-post-name">@<?php echo $row_item['author_name'];?></p>
                                     <p><?php echo $row_item['list_item_content'];?></p>
@@ -82,6 +86,10 @@
 
                             <div style="text-align: center" class="md-form mb-5">
                                 <input type="text" value="<?php echo $row['list_id']; ?>" name="list_index" hidden>
+                            </div>
+
+                            <div style="text-align: center" class="md-form mb-5">
+                                <input type="text" value="<?php echo $_SESSION['author_id']; ?>" name="author_id" hidden>
                             </div>
 
                             <div style="text-align: center" class="md-form mb-5">

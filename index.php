@@ -1,3 +1,12 @@
+<?php
+    if(isset($_POST['logout'])){
+        include_once('classes/User.class.php');
+        include_once('classes/Functions.class.php');
+        $user = new User();
+        $user->user_logout();
+        Functions::redirect('login.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -23,14 +32,28 @@
             <button class="board-title btn pt-2">
                 <h2 class="m-0">Web Development</h2>
             </button>
-            <button class="personal-btn btn pt-2">Sign up</button>
-            <button class="private-btn btn pt-2">Login</button>
+            <?php
+            include_once("classes/Session.class.php");
+            Session::startSession();
+                if($_SESSION['login'] == 1){
+                ?>
+                        <form method="POST" action=''>
+                            <input type="submit" name="logout" class="add-list-btn btn"  value="Logout">
+                        </form> 
+                    <?php
+                }
+            ?>
+            
         </div>
     </section>
     <!-- End of board info bar -->
 
     <!-- Lists container -->
-    <section class="lists-container">
+    <?php
+        if($_SESSION['login'] == 1){
+
+        ?>
+        <section class="lists-container">
         <?php
         include_once("includes/List.php");
         ?>
@@ -82,6 +105,10 @@
         ?>
                 
     </script>
-</body>
+
+        <?php
+        }
+    ?>
+    </body>
 
 </html>
