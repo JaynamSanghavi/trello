@@ -157,9 +157,6 @@ body {
     margin-bottom: 0;
 }
 
-.list-items li:hover {
-    background-color: #eee;
-}
 
 .add-card-btn {
     display: block;
