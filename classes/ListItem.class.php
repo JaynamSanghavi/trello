@@ -1,5 +1,8 @@
 <?php
     include_once('Database.class.php');
+    if(isset($_POST['submit'])){
+        echo "hello";
+    }
     Class ListItem{
         public function __construct(){
             global $database;
@@ -13,7 +16,7 @@
             if($preparedStatement->execute()){
                 return $this->connection->insert_id;
             } else{
-                die("ERROR WHILE INSERTING STUDENT");
+                die("ERROR WHILE INSERTING LIST ITEM");
             }
         }
 

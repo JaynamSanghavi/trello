@@ -15,11 +15,16 @@
 
 <body class="px-4">
     <!-- Board info bar -->
+    <?php
+      $var = "";
+    ?>
     <section class="board-info-bar">
         <div class="board-controls">
             <button class="board-title btn pt-2">
                 <h2 class="m-0">Web Development</h2>
             </button>
+            <button class="personal-btn btn pt-2">Sign up</button>
+            <button class="private-btn btn pt-2">Login</button>
         </div>
     </section>
     <!-- End of board info bar -->
@@ -29,15 +34,54 @@
         <?php
         include_once("includes/List.php");
         ?>
+        <button type="button" class="add-list-btn btn" data-toggle="modal" data-target="#listmodal"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add a List</button>
+        
+<div class="modal fade" id="listmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Add a List</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="includes/List.php" method="post">
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
+                                <label for="title">Enter the title </label>
+                                <input type="text" id="card-title" name="list_title" class="form-control validate">
 
-
+                            </div>
+                            <div style="text-align: center" class="md-form mb-5">
+                                <input type="submit"  value="ADD" name="submit" style="display: block; margin: 0 auto;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- End of lists container -->
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="asset/DragSort.js"></script>
-    <script src="asset/custom.js"></script>
+    <script>
+        $("<?php echo substr($var,0,strlen($var)-1); ?>").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
+
+        <?php
+            $temp = explode(",",$var);
+            foreach($temp as $str){
+            ?>
+            function saveOrder() {
+                var data = $("<?php echo $str; ?> li").map(function() { return $(this).attr('id'); }).get();
+                $("input[name=list1SortOrder]").val(data.join("|"));
+            };
+        <?php
+            }
+        ?>
+                
+    </script>
 </body>
 
 </html>

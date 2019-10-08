@@ -1,5 +1,9 @@
 <?php
     include_once("classes/List.class.php");
+    if(isset($_POST['submit'])){
+        extract($_POST);
+        echo $list_title;
+    }
     $list = new cardList();
     $result_set = $list->readList();
     while($row = mysqli_fetch_assoc($result_set)){
@@ -8,6 +12,7 @@
                 <h3 class="list-title"><?php echo $row['list_title'];?></h3>
                 <ul class="list-items" id="list<?php echo $row['list_id'];?>">
                     <?php
+                        $var = $var .'#list' . $row['list_id'] . ',';
                         include_once("classes/ListItem.class.php");
                         $listitem = new ListItem();
                         $listitem_resultset = $listitem->readListItem((int)$row['list_id']);

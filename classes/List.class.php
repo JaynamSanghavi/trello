@@ -11,5 +11,16 @@
             return $result_set;
         }
 
+        public function insertList($list_title){
+            $query = "INSERT INTO list(list_title) VALUES (?)";
+            $preparedStatement = $this->connection->prepare($query);
+            $preparedStatement->bind_param("s",$list_title);
+            if($preparedStatement->execute()){
+                return $this->connection->insert_id;
+            } else{
+                die("ERROR WHILE INSERTING STUDENT");
+            }
+        }
+
     }
 ?>
