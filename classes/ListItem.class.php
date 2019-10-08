@@ -16,5 +16,10 @@
                 die("ERROR WHILE INSERTING STUDENT");
             }
         }
+
+        public function readListItem($list_id){
+            $result_set = $this->connection->query("SELECT * FROM list WHERE is_deleted = 0 and list_id = $list_id");
+            return $result_set;
+        }
     }
 ?>

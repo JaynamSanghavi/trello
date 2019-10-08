@@ -27,7 +27,7 @@
 			$this->connection = new mysqli($this->host, $this->username, $this->password);
 			if(/*$this->connection->errno*/ mysqli_connect_error()){
 				//if connection is not successful
-				die("Connection failed :" . /*$this->connection->connect_error*/ mysqli_error() );
+				die("Connection failed :" . $this->connection->connect_error );
 			}
 			$db_selected = $this->connection->select_db($this->database);
 			if(!$db_selected){
