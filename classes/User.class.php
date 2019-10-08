@@ -18,7 +18,7 @@
             if($preparedStatement->execute()){
                 return $this->connection->insert_id;
             } else{
-                die("ERROR WHILE INSERTING Author");
+                die("ERROR WHILE INSERTING Author ");
             }
         }
 
