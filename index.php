@@ -80,7 +80,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?> </h6>
-                                <button type="button" class="add-card-btn btn" data-toggle="modal" data-target="#<?php echo $row['list_id']?>"><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;&nbsp;</button>
+                                <button type="button" class="add-card-btn btn" data-toggle="modal" data-target="#<?php echo $row['list_id']?>"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                 <!-- <div class="item-avatar float-left m-2">
                                     <img src="data:image/jpeg;base64,<?php echo base64_encode($row_item['author_picture'])?>" alt="" class="rounded-circle">
                                 </div> -->
