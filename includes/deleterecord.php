@@ -7,8 +7,6 @@
          $newListItem->deleteItem($_GET['id']);
         Functions::redirect("../index.php");
 
-    }else{
-        echo "die";
     }
 
     if(isset($_GET['listid'])){
@@ -16,7 +14,8 @@
         $newListItem->deleteList($_GET['listid']);
        Functions::redirect("../index.php");
 
-   }else{
+   }
+   else{
        echo "die";
    }
 ?>
