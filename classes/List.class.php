@@ -17,7 +17,9 @@
         }
 
         public function updateList($list_title,$list_id){
+            echo "in q";
             $query = "UPDATE list SET list_title= '$list_title' WHERE list_id = $list_id";
+            echo $query;
             return $this->connection->query($query);
         }
 
