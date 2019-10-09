@@ -8,10 +8,10 @@
 		
 		/* use to create default constructer*/
 		public function __construct(){
-			$this->host = "localhost";
-			$this->username = "root";
-			$this->password = "";
-			$this->database = "trello";
+			$this->host = "remotemysql.com:3306";
+            $this->username = "kkJeRtnUZL";
+            $this->password = "oCoSYIDods";
+            $this->database = "kkJeRtnUZL";
 			$this->connectDB();
 		}
 		
