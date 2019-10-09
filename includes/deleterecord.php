@@ -10,7 +10,7 @@
     }
 
     if(isset($_GET['listid'])){
-        $newList = new Lists();
+        $newList = new cardList();
         $newList->deleteList($_GET['listid']);
        Functions::redirect("../index.php");
    }
