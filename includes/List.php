@@ -13,6 +13,6 @@
         extract($_POST);
         $newList = new cardList();
         $newList->updateList($list_title,$list_id);
-        Functions::redirect("../index.php");
+        //Functions::redirect("../index.php");
     }
 ?>

@@ -195,7 +195,7 @@
                     <form action="includes/List.php" method="post">
                         <div class="modal-body mx-3">
                             <div class="md-form mb-5">
-                                <label for="title">Enter the title </label>
+                                <label for="title">Edit the title </label>
                                 <input type="text" id="card-title" value="<?php echo $row['list_title']; ?>" name="list_title" class="form-control validate">
                             </div>
 
@@ -204,7 +204,7 @@
                             </div>
 
                             <div style="text-align: center" class="md-form mb-5">
-                                <input type="submit"  value="ADD" name="submitedit" style="display: block; margin: 0 auto;">
+                                <input type="submit"  value="EDIT" name="submitedit" style="display: block; margin: 0 auto;">
                             </div>
                         </div>
                     </form>
