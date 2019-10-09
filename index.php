@@ -78,12 +78,15 @@
                     ?>
                     <li id="<?php echo $row_item['list_item_id'];?>">
                         <div class="card">
-                            <div class="card-title text-right">
-                                <button type="button" class="add-card-btn btn d-inline" data-toggle="modal" data-target="#edit<?php echo $row_item['list_item_id']?>"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                <a href="includes/deleterecord.php?id=<?php echo $row_item['list_item_id']?>" class="add-card-btn btn d-inline" data-attr="delete<?php echo $row['list_item_id']?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                            </div>
                             <div class="card-body">
-                                <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?></h6>
+                                <div class="card-title">
+                                    <h6 class="text-left"><?php echo $row_item['list_item_title'];?></h6>
+                                    <div class="card-title text-right">
+                                        <button type="button" class="add-card-btn btn d-inline" data-toggle="modal" data-target="#edit<?php echo $row_item['list_item_id']?>"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                        <a href="includes/deleterecord.php?id=<?php echo $row_item['list_item_id']?>" class="add-card-btn btn d-inline" data-attr="delete<?php echo $row['list_item_id']?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+
                                 <!-- <div class="item-avatar float-left m-2">
                                     <img src="data:image/jpeg;base64," alt="" class="rounded-circle">
                                 </div> -->
@@ -91,26 +94,6 @@
                                     <p class="item-post-name">@<?php echo $row_item['author_name'];?></p>
                                     <p><?php echo $row_item['list_item_content'];?></p>
                                 </div>
-                                <div class="item-footer clearfix">
-                                    <div class="item-right">
-                                        <a href="#"><i class="fas fa-check"></i></a>
-                                        <div class="item-small-avatar">
-                                            <img src="https://randomuser.me/api/portraits/thumb/men/10.jpg" alt="avatar-right">
-                                        </div>
-                                        <div class="item-small-avatar">
-                                            <img src="https://randomuser.me/api/portraits/thumb/men/11.jpg" alt="avatar-right">
-                                        </div>
-                                        <div class="item-small-avatar">
-                                            <img src="https://randomuser.me/api/portraits/thumb/men/12.jpg" alt="avatar-right">
-                                        </div>        
-                                    </div>
-                                    <div class="item-wrong">
-                                        <a href="#"><i class="fas fa-times"></i></a>
-                                        <div class="item-small-avatar">
-                                            <img src="https://randomuser.me/api/portraits/thumb/men/13.jpg" alt="avatar-wrong">
-                                        </div>
-                                    </div>
-                                </div>      
                             </div>
                         </div>      
                         <div class="modal fade" id="edit<?php echo $row_item['list_item_id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
