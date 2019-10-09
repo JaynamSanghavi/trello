@@ -41,6 +41,8 @@
                             <input type="submit" name="logout" class="add-list-btn btn"  value="Logout">
                         </form> 
                     <?php
+                }else{
+                    Functions::redirect("login.php");
                 }
             ?>
             
@@ -50,8 +52,6 @@
 
     <!-- Lists container -->
     <?php
-    echo "hi";
-    echo $_SESSION['login'];
         if(true){
 
         ?>
