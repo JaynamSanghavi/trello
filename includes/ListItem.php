@@ -1,6 +1,6 @@
 <?php
-    include_once("classes/ListItem.class.php");
-    include_once("classes/Functions.class.php");
+    include_once("../classes/ListItem.class.php");
+    include_once("../classes/Functions.class.php");
     
     if(isset($_POST['submit'])){
         echo "hello";
