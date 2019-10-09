@@ -78,6 +78,9 @@
                     ?>
                     <li id="<?php echo $row_item['list_item_id'];?>">
                         <div class="card">
+                            <div class="card-title">
+                                <button type="button" class="add-card-btn btn" data-toggle="modal" data-target="#edit<?php echo $row['list_item_id']?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            </div>
                             <div class="card-body">
                                 <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?></h6>
                                 <!-- <div class="item-avatar float-left m-2">
