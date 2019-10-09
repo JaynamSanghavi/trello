@@ -19,6 +19,11 @@
             }
         }
 
+        public function getDeatils($list_item_id){
+            $result_set = $this->connection->query("SELECT * FROM `list_item`  WHERE list_item_id = $list_item_id");
+            return $result_set;
+        }
+
         public function readListItem($list_id){
             $result_set = $this->connection->query("SELECT * FROM `list_item` INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id");
             return $result_set;
