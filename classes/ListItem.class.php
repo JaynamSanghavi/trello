@@ -21,9 +21,7 @@
 
         public function deleteItem($id){
             $query = "UPDATE list_item SET is_deleted = 1 WHERE list_item_id = $id";
-            echo $query . $id;
             $this->connection->query($query);
-            echo "done";
         }
 
         public function getDeatils($list_item_id){

@@ -4,7 +4,7 @@
     if(isset($_GET['id'])){
          $newListItem = new ListItem();
          $newListItem->deleteItem($_GET['id']);
-        //Functions::redirect("../index.php");
+        Functions::redirect("../index.php");
 
     }else{
         echo "die";
