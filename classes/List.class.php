@@ -11,6 +11,11 @@
             return $result_set;
         }
 
+        public function deleteList($list_id){
+            $query = "UPDATE list SET is_deleted = 1 WHERE list_id = $list_id";
+            $this->connection->query($query);
+        }
+
         public function insertList($list_title){
             $query = "INSERT INTO list(list_title) VALUES (?)";
             $preparedStatement = $this->connection->prepare($query);
