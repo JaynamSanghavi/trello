@@ -20,11 +20,10 @@
         }
 
         public function deleteItem($id){
-            $current_date = date("Y-m-d h:i:sa");
-            $query = "UPDATE list_item SET is_deleted = ?, deleted_at = ? WHERE list_item_id = ?";
-            echo $query;
+            $query = "UPDATE list_item SET is_deleted = ? WHERE list_item_id = ?";
+            echo $query . $id;
             $preparedStatement = $this->connection->prepare($query);
-            $preparedStatement->bind_param("isi",1,$current_date,$id);
+            $preparedStatement->bind_param("ii",1,$id);
             if(!($preparedStatement->execute())){
                 echo "dieee";
             }
