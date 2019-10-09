@@ -79,13 +79,9 @@
                     <li id="<?php echo $row_item['list_item_id'];?>">
                         <div class="card">
                             <div class="card-body">
-                                <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?> </h6>
-                                <button type="button" class="add-card-btn btn" data-toggle="modal" data-target="#<?php echo $row['list_item_id']?>"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                
-                            
-                                
+                                <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?></h6>
                                 <!-- <div class="item-avatar float-left m-2">
-                                    <img src="data:image/jpeg;base64,<?php echo base64_encode($row_item['author_picture'])?>" alt="" class="rounded-circle">
+                                    <img src="data:image/jpeg;base64," alt="" class="rounded-circle">
                                 </div> -->
                                 <div class="item-content">
                                     <p class="item-post-name">@<?php echo $row_item['author_name'];?></p>
@@ -159,51 +155,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="modal fade" id="<?php echo $row['list_item_id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold">Edit a card</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form action="includes/ListItem.php" method="post">
-                        <div class="modal-body mx-3">
-                            <?php
-                             include("classes/ListItem.class.php");
-                                $newList = new ListItem(); 
-                                $result_set = $newList->getDeatils($row['list_item_id']);  
-                                extract($result_set);
-                            ?>
-                            <div class="md-form mb-5">
-                                <label for="title">Edit the title </label>
-                                <input type="text" id="card-title" name="list_item_title" value="<?php echo $list_item_title; ?>" class="form-control validate">
-
-                            </div>
-                            <div class="md-form mb-5">
-                                <label for="content">Edit the content </label>
-                                <textarea type="text" value="<?php echo $list_item_content; ?>" id="card-content" name="list_item_content" class="md-textarea form-control" rows="4"></textarea>
-                            </div>
-
-                            <div style="text-align: center" class="md-form mb-5">
-                                <input type="text" value="<?php echo $row['list_id']; ?>" name="list_index" hidden>
-                            </div>
-
-                            <div style="text-align: center" class="md-form mb-5">
-                                <input type="text" value="<?php echo $_SESSION['author_id']; ?>" name="author_id" hidden>
-                            </div>
-
-                            <div style="text-align: center" class="md-form mb-5">
-                                <input type="submit"  value="Edit" name="submitedit" style="display: block; margin: 0 auto;">
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-                                </div>
 
             
             <?php
