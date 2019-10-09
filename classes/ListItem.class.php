@@ -32,7 +32,7 @@
         }
 
         public function readListItem($list_id){
-            $result_set = $this->connection->query("SELECT * FROM `list_item` INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id AND is_deleted = 0");
+            $result_set = $this->connection->query("SELECT * FROM `list_item` INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id AND list_item.is_deleted = 0");
             return $result_set;
         }
     }
