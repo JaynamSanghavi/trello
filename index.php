@@ -30,7 +30,7 @@
     <section class="board-info-bar">
         <div class="board-controls">
             <button class="board-title btn pt-2">
-                <h2 class="m-0">Web Development</h2>
+                <h2 class="m-0">Web Development !</h2>
             </button>
             <?php
             include_once("classes/Session.class.php");
