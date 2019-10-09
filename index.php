@@ -52,7 +52,7 @@
     <?php
     echo "hi";
     echo $_SESSION['login'];
-        if($_SESSION['login'] == 1){
+        if(true){
 
         ?>
         <section class="lists-container">
