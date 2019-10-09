@@ -8,10 +8,10 @@
 		
 		/* use to create default constructer*/
 		public function __construct(){
-			$this->host = "remotemysql.com:3306";
-            $this->username = "kkJeRtnUZL";
-            $this->password = "oCoSYIDods";
-            $this->database = "kkJeRtnUZL";
+			$this->host = "www.db4free.net:3306";
+            $this->username = "jaynamsanghavi";
+            $this->password = "abcd@123";
+            $this->database = "trello";
 			$this->connectDB();
 		}
 		
