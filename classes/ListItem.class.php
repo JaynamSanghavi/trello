@@ -25,13 +25,18 @@
         }
 
         public function getDeatils($list_item_id){
-            $result_set = $this->connection->query("SELECT * FROM `list_item`  WHERE list_item_id = $list_item_id");
+            $result_set = $this->connection->query("SELECT * FROM list_item  WHERE list_item_id = $list_item_id");
             return $result_set;
+        }
+
+        public function updateListItem($list_item_title,$list_item_content,$list_item_id){
+            $query = "UPDATE list_item SET list_item_title=$list_item_title,list_item_content=$list_item_content WHERE list_item_id = $list_item_id";
+            $this->connection->query($query);
         }
 
         public function readListItem($list_id){
 
-            $result_set = $this->connection->query("SELECT * FROM `list_item` INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id AND list_item.is_deleted = 0");
+            $result_set = $this->connection->query("SELECT * FROM list_item INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id AND list_item.is_deleted = 0");
             return $result_set;
         }
     }

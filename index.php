@@ -131,15 +131,11 @@
                             </div>
                             <div class="md-form mb-5">
                                 <label for="content">Edit the content </label>
-                                <textarea type="text" id="card-content" value="<?php echo $row_item['list_item_content'];?>" name="list_item_content" class="md-textarea form-control" rows="4"></textarea>
+                                <textarea type="text" id="card-content" name="list_item_content" class="md-textarea form-control" rows="4"><?php echo $row_item['list_item_content'];?></textarea>
                             </div>
 
                             <div style="text-align: center" class="md-form mb-5">
-                                <input type="text" value="<?php echo $row['list_id']; ?>" name="list_index" hidden>
-                            </div>
-
-                            <div style="text-align: center" class="md-form mb-5">
-                                <input type="text" value="<?php echo $_SESSION['author_id']; ?>" name="author_id" hidden>
+                                <input type="text" value="<?php echo $row_item['list_item_id']; ?>" name="list_item_id" hidden>
                             </div>
 
                             <div style="text-align: center" class="md-form mb-5">
