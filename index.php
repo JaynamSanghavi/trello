@@ -79,8 +79,8 @@
                     <li id="<?php echo $row_item['list_item_id'];?>">
                         <div class="card">
                             <div class="card-title text-right">
-                                <button type="button" class="add-card-btn btn d-inline" data-toggle="modal" data-target="#edit<?php echo $row['list_item_id']?>"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                <a href="includes/deleterecord.php?id=<?php echo $row['list_item_id']?>" class="add-card-btn btn d-inline" data-attr="delete<?php echo $row['list_item_id']?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <button type="button" class="add-card-btn btn d-inline" data-toggle="modal" data-target="#edit<?php echo $row_item['list_item_id']?>"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                <a href="includes/deleterecord.php?id=<?php echo $row_item['list_item_id']?>" class="add-card-btn btn d-inline" data-attr="delete<?php echo $row['list_item_id']?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             </div>
                             <div class="card-body">
                                 <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?></h6>

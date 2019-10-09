@@ -19,13 +19,20 @@
             }
         }
 
+        public function deleteItem($id){
+            $deleted = 1;
+            $current_date = date("Y-m-d h:i:sa");
+            $query = "UPDATE list_item SET is_deleted = $deleted, deleted_at = '$current_date' WHERE list_item_id = $id";
+            $this->connection->query($query);
+        }
+
         public function getDeatils($list_item_id){
             $result_set = $this->connection->query("SELECT * FROM `list_item`  WHERE list_item_id = $list_item_id");
             return $result_set;
         }
 
         public function readListItem($list_id){
-            $result_set = $this->connection->query("SELECT * FROM `list_item` INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id");
+            $result_set = $this->connection->query("SELECT * FROM `list_item` INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id AND is_deleted = 0");
             return $result_set;
         }
     }
