@@ -12,6 +12,7 @@
     $var ="";
     while($row = mysqli_fetch_assoc($result_set)){
 ?>
+<?echo "hello in list"; ?>
 <div class="list" >
                 <h3 class="list-title"><?php echo $row['list_title'];?></h3>
                 <ul class="list-items" id="list<?php echo $row['list_id'];?>">
