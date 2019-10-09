@@ -26,6 +26,7 @@
             echo "query preped";
             $preparedStatement->bind_param("ii",1,$id);
             echo "query binned";
+            echo $preparedStatement->error;
             if($preparedStatement->execute()){
                 echo "exe";
             }else{
