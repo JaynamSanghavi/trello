@@ -70,7 +70,7 @@
                 <div class="list-title clearfix">
                     <h4 class="float-left d-inline font-weight-bold"><?php echo $row['list_title'];?></h4>
                     <div class="d-inline float-right">
-                        <button type="button" class="add-card-btn btn d-inline" data-toggle="modal" data-target="#edit<?php echo $row_item['list_item_id']?>"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                        <button type="button" class="add-card-btn btn d-inline" data-toggle="modal" data-target="#editlsit<?php echo $row['list_id'];?>"><i class="fa fa-edit" aria-hidden="true"></i></button>
                         <a href="includes/deleterecord.php?listid=<?php echo $row['list_id'];?>" class="add-card-btn btn d-inline" data-attr="delete<?php echo $row['list_item_id']?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -183,7 +183,34 @@
             </div>
         </div>
 
-            
+        <div class="modal fade" id="editlsit<?php echo $row['list_id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Edit a List</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="includes/List.php" method="post">
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
+                                <label for="title">Enter the title </label>
+                                <input type="text" id="card-title" value="<?php echo $row['list_title']; ?>" name="list_title" class="form-control validate">
+                            </div>
+
+                            <div style="text-align: center" class="md-form mb-5">
+                                <input type="text" value="<?php echo $row['list_id']; ?>" name="list_index" hidden>
+                            </div>
+
+                            <div style="text-align: center" class="md-form mb-5">
+                                <input type="submit"  value="ADD" name="submitedit" style="display: block; margin: 0 auto;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
             <?php
             }
         ?>

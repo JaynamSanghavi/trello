@@ -16,6 +16,11 @@
             $this->connection->query($query);
         }
 
+        public function updateList($list_title,$list_id){
+            $query = "UPDATE list SET list_title= '$list_title' WHERE list_id = $list_id";
+            $this->connection->query($query);
+        }
+
         public function insertList($list_title){
             $query = "INSERT INTO list(list_title) VALUES (?)";
             $preparedStatement = $this->connection->prepare($query);
