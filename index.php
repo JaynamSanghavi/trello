@@ -70,7 +70,7 @@
                 <ul class="list-items" id="list<?php echo $row['list_id'];?>">
                     <?php
                         $var = $var .'#list' . $row['list_id'] . ',';
-                        include_once("../classes/ListItem.class.php");
+                        include_once("classes/ListItem.class.php");
                         $listitem = new ListItem();
                         $listitem_resultset = $listitem->readListItem((int)$row['list_id']);
                         while($row_item = mysqli_fetch_assoc($listitem_resultset)){
