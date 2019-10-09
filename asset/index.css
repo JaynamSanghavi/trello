@@ -193,11 +193,6 @@ body {
     background-color: #005485;
 }
 
-.add-card-btn::after,
-.add-list-btn::after {
-    content: '...';
-}
-
 .item-footer{
     border-top: 1px solid #eee;
     padding-top: 1rem;
