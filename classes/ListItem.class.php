@@ -30,7 +30,7 @@
         }
 
         public function updateListItem($list_item_title,$list_item_content,$list_item_id){
-            $query = "UPDATE list_item SET list_item_title=$list_item_title,list_item_content=$list_item_content WHERE list_item_id = $list_item_id";
+            $query = "UPDATE list_item SET list_item_title= '$list_item_title' ,list_item_content= '$list_item_content' WHERE list_item_id = $list_item_id";
             $this->connection->query($query);
         }
 
