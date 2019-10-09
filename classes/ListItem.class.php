@@ -20,19 +20,10 @@
         }
 
         public function deleteItem($id){
-            $query = "UPDATE list_item SET is_deleted = ? WHERE list_item_id = ?";
+            $query = "UPDATE list_item SET is_deleted = 1 WHERE list_item_id = $id";
             echo $query . $id;
-            $preparedStatement = $this->connection->prepare($query);
-            echo "query preped";
-            $preparedStatement->bind_param("ii",1,$id);
-            echo "query binned";
-            echo $preparedStatement->error;
-            if($preparedStatement->execute()){
-                echo "exe";
-            }else{
-                echo " solve";
-            }
-            echo "query exe";
+            $this->connection->query($query);
+            echo "done";
         }
 
         public function getDeatils($list_item_id){
