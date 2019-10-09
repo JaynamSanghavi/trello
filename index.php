@@ -50,6 +50,7 @@
 
     <!-- Lists container -->
     <?php
+    echo $_SESSION['login'];
         if($_SESSION['login'] == 1){
 
         ?>
