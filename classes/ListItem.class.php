@@ -20,10 +20,14 @@
         }
 
         public function deleteItem($id){
-            $deleted = 1;
             $current_date = date("Y-m-d h:i:sa");
-            $query = "UPDATE list_item SET is_deleted = $deleted, deleted_at = '$current_date' WHERE list_item_id = $id";
-            $this->connection->query($query);
+            $query = "UPDATE list_item SET is_deleted = ?, deleted_at = ? WHERE list_item_id = ?";
+            echo $query;
+            $preparedStatement = $this->connection->prepare($query);
+            $preparedStatement->bind_param("isi",1,$current_date,$id);
+            if(!($preparedStatement->execute())){
+                echo "dieee";
+            }
         }
 
         public function getDeatils($list_item_id){
@@ -32,7 +36,7 @@
         }
 
         public function readListItem($list_id){
-            
+
             $result_set = $this->connection->query("SELECT * FROM `list_item` INNER JOIN author ON list_item.author_id = author.author_id WHERE list_id = $list_id AND list_item.is_deleted = 0");
             return $result_set;
         }
