@@ -23,13 +23,15 @@
             $query = "UPDATE list_item SET is_deleted = ? WHERE list_item_id = ?";
             echo $query . $id;
             $preparedStatement = $this->connection->prepare($query);
+            echo "query preped";
             $preparedStatement->bind_param("ii",1,$id);
-            echo $preparedStatement->fullQuery;
+            echo "query binned";
             if($preparedStatement->execute()){
                 echo "exe";
             }else{
                 echo " solve";
             }
+            echo "query exe";
         }
 
         public function getDeatils($list_item_id){
