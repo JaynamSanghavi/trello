@@ -3,7 +3,6 @@
     
     Class ListItem{
         public function __construct(){
-            echo "hii";
             global $database;
             $this->connection = $database->getConnection();
         }
