@@ -24,8 +24,10 @@
             echo $query . $id;
             $preparedStatement = $this->connection->prepare($query);
             $preparedStatement->bind_param("ii",1,$id);
-            if(!($preparedStatement->execute())){
-                echo "dieee";
+            if(($preparedStatement->execute())){
+                echo "exe";
+            }else{
+                echo " solve";
             }
         }
 
