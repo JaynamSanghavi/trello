@@ -34,6 +34,7 @@
             </button>
             <?php
             include_once("classes/Session.class.php");
+            include_once("classes/Functions.class.php");
             Session::startSession();
                 if($_SESSION['login'] == 1){
                 ?>
