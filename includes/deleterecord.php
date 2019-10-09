@@ -10,12 +10,8 @@
     }
 
     if(isset($_GET['listid'])){
-        $newListItem = new Lists();
-        $newListItem->deleteList($_GET['listid']);
+        $newList = new Lists();
+        $newList->deleteList($_GET['listid']);
        Functions::redirect("../index.php");
-
-   }
-   else{
-       echo "die";
    }
 ?>
