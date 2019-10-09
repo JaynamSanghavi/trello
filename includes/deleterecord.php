@@ -8,4 +8,5 @@
 
     }else{
         echo "die";
-  
+    }
+?>
