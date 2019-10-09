@@ -9,10 +9,9 @@
     }  
 
     if(isset($_POST['submitedit'])){
-        echo "hello";
         extract($_POST);
         $newList = new cardList();
-        echo $newList->updateList($list_title,$list_id);
-        //Functions::redirect("../index.php");
+        echo $newList->updateList($list_title,$list_index);
+        Functions::redirect("../index.php");
     }
 ?>

@@ -3,7 +3,6 @@
     include_once("../classes/Functions.class.php");
     
     if(isset($_POST['submit'])){
-        echo "hello";
         extract($_POST);
         $newListItem = new ListItem();
         $newListItem->insertListItem($list_item_title,$list_item_content,$list_index,$author_id);
@@ -11,7 +10,6 @@
     }
 
     if(isset($_POST['submitedit'])){
-        echo "hello";
         extract($_POST);
         $newListItem = new ListItem();
         $newListItem->updateListItem($list_item_title,$list_item_content,$list_item_id);
