@@ -57,7 +57,7 @@
         ?>
         <section class="lists-container">
         <?php
-        require_once(realpath( __DIR__ ."includes/List.php"));
+        require_once(realpath( __DIR__ ."../includes/List.php"));
         ?>
         <button type="button" class="add-list-btn btn" data-toggle="modal" data-target="#listmodal"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add a List</button>
         
