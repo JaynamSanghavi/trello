@@ -79,7 +79,7 @@
                     <li id="<?php echo $row_item['list_item_id'];?>">
                         <div class="card">
                             <div class="card-body">
-                                <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?></h6>
+                                <h6 class="card-title text-center"><?php echo $row_item['list_item_title'];?> <i class="far fa-edit"></i></h6>
                                 <!-- <div class="item-avatar float-left m-2">
                                     <img src="data:image/jpeg;base64,<?php echo base64_encode($row_item['author_picture'])?>" alt="" class="rounded-circle">
                                 </div> -->
