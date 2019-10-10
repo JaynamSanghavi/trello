@@ -36,6 +36,7 @@
             include_once("classes/Session.class.php");
             include_once("classes/Functions.class.php");
             Session::startSession();
+            //if session variable login is 1 then process or else redirected to login.php
                 if($_SESSION['login'] == 1){
                 ?>
                         <form method="POST" action=''>
@@ -63,6 +64,7 @@
             $list = new cardList();
             $result_set = $list->readList();
             $var ="";
+            // displaying all the list
             while($row = mysqli_fetch_assoc($result_set)){
             ?>
             
@@ -80,6 +82,7 @@
                         include_once("classes/ListItem.class.php");
                         $listitem = new ListItem();
                         $listitem_resultset = $listitem->readListItem((int)$row['list_id']);
+                        // displaying all the list item within tht list
                         while($row_item = mysqli_fetch_assoc($listitem_resultset)){
                     ?>
                     <li id="<?php echo $row_item['list_item_id'];?>">

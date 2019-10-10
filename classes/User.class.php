@@ -3,12 +3,34 @@
 	include_once ("Session.class.php");
 	require_once ("Functions.class.php");
 	class User{
+
+        /**
+         * 
+         * It handle all the query proessing for user
+         * 
+        */
         private $connection;
+
+        /**
+         * 
+         * Constructor is use to get the connection object
+         * and also start the session
+         */
+
 		public function __construct(){
             global $database;
             $this->connection = $database->getConnection();
             Session::startSession();
         }
+
+        /**
+         * 
+         * It is use to create new user in the database
+         * Para : user name and password
+         * Return : inserted id
+         * Output : inserted new record in db
+         * 
+         */
 
         public function insertuser($username,$password){
             $hashpass = hash("md5",$password);
@@ -22,12 +44,27 @@
             }
         }
 
+        /**
+         * 
+         * It is used when user logout
+         * clear all the session variable and destroy the session
+         * 
+         */
+
         public function user_logout(){
 			$_SESSION['login'] = 0;
             $_SESSION['author_name'] = null;
             $_SESSION['author_id']  = null;
 			session_destroy();
-		}
+        }
+        
+        /**
+         * 
+         * It is use to check if user entered a valid username and password
+         * Para: username and password
+         * Return : if valid then true else false
+         *  
+         */
 
         public function processLogin( $username, $password){
             $query = "SELECT * FROM author WHERE author_name = ?";

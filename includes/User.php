@@ -1,5 +1,14 @@
 <?php
     include_once("../classes/User.class.php");
+
+    /**
+     * 
+     * It is called when user entered name an password 
+     * and process login will be call from here
+     * It it return false , flagwil set to 1 
+     * 
+     */
+
     if(isset($_POST['submit'])){
         extract($_POST);
         $obj = new User();
@@ -9,7 +18,14 @@
         }else{
             $flag = 1;
         }
-    }else if(isset($_POST['submitsu'])){
+    }
+    /**
+     * 
+     * It is called when new user is created.
+     * It something went wrong will calling the method , the flag is set to 1
+     * 
+     */
+    else if(isset($_POST['submitsu'])){
         extract($_POST);
         $obj = new User();
         if($obj->insertUser($username,$password)){
